@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
 
         {% block stylesheets %}
-            {% stylesheets '@bootstrap_css' '@main_css' %}
+            {% stylesheets '@bootstrap_css' '@main_css' '@angular_growl_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet"/>
             <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css"
                   rel="stylesheet">
@@ -14,7 +14,8 @@
         {% endblock %}
 
         {% block javascripts %}
-            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' '@moment_js' '@pusher_js' %}
+            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' '@moment_js' '@pusher_js'
+            '@angular_pusher_js' '@angular_growl_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
 
             {% endjavascripts %}

@@ -3,6 +3,7 @@
 namespace Realtime\Bundle\NotesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncode;
@@ -37,8 +38,12 @@ class ToDoListController extends Controller
 
     public function saveAction()
     {
-        $note = $this->get(self::NOTE_SERVICE);
+//        $data = $this->get('request')->request->get('note');
+//        var_dump($data);
+//        $note = $this->get(self::NOTE_SERVICE);
         //$response = $note->saveApi();
+        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
+        $pusher->trigger( 'realTimeChannel1', 'saveEvent', '' );
         return new JsonResponse([
             'status' => 'ok',
             'createdBy' => 'ok',
@@ -49,11 +54,11 @@ class ToDoListController extends Controller
     }
     
     public function testAction(){
-        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
-        $pusher->trigger( 'realTimeChannel1', 'saveEvent', 'dupa mariana' );
-        $response = $pusher->get( '/channels' );
-        var_dump($response);
-        exit;
+//        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
+//        $pusher->trigger( 'realTimeChannel1', 'saveEvent', 'dupa mariana' );
+//        $response = $pusher->get( '/channels' );
+//        var_dump($response);
+//        exit;
     }
 
 }

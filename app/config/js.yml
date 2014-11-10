@@ -15,6 +15,9 @@ assetic:
         pusher_js:
             inputs:
                 - '%kernel.root_dir%/../bower_components/pusher/src/pusher.js'
+        angular_pusher_js:
+            inputs:
+                - '%kernel.root_dir%/../bower_components/angular-pusher/angular-pusher.js'
         angular_route_js:
             inputs:
                 - '%kernel.root_dir%/../bower_components/angular-route/angular-route.js'

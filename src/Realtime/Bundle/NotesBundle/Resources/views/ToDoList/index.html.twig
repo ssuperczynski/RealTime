@@ -15,10 +15,9 @@
             <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
             <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
             <button class="btn-lg btn-danger btn" ><a href={{path('realtime_notes_test')}}>Get</a></button>
-            <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
         </div>
         <div class="col-md-4">
-            &nbsp;
+            <div growl></div>
         </div>
     </div>
 
