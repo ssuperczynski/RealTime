@@ -1,0 +1,7 @@
+.line {
+    text-decoration: line-through;
+}
+
+.archived {
+    background-color: lightgrey;
+}

@@ -3,6 +3,9 @@ assetic:
         angular_growl_css:
             inputs:
                 - '%kernel.root_dir%/../bower_components/angular-growl-v2/build/angular-growl.css'
+        main_css:
+            inputs:
+                - '@RealtimeNotesBundle/Resources/public/css/*'
         bootstrap_css:
             inputs:
                 - '%kernel.root_dir%/../bower_components/bootstrap/dist/css/bootstrap.css'
