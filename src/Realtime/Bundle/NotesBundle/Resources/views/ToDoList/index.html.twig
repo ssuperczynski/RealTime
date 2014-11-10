@@ -27,7 +27,7 @@
             &nbsp;
         </div>
         <div class="col-md-4">
-            <a href="#" class="list-group-item" ng-repeat="note in notes" ng-class="{archived:archived}">
+            <a href="#" class="list-group-item" ng-repeat="note in notes track by $index" ng-class="{archived:archived}">
                 <div class="row">
                     <div class="col-md-3" ng-model="createdBy">
                         [[note.createdBy]]
@@ -41,12 +41,12 @@
                         [[note.note]]
                     </div>
                     <div class="col-md-3 pull-right">
-                        <input type="checkbox" name='archived' ng-model="archived">Archived
+                        <input type="checkbox" id="archived[[ $index ]]" name='archived' ng-model="archived"><label for="archived[[ $index ]]">Archived</label>
                     </div>
                 </div>
            </a>
         </div>
-        <div class="col-md-4">
+6        <div class="col-md-4">
             &nbsp;
         </div>
     </div>
