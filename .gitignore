@@ -24,4 +24,5 @@ composer
 *~
 *.log
 /nbproject/private/
+/nbproject/*
 /web/bootstrap
