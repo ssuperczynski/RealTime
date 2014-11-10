@@ -11,9 +11,9 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
             }).then(function (response) {
                 self.notes.unshift({
                     id: response.id,
-                    createdBy: response.createdBy,
-                    note: response.note,
-                    datetime: moment().format("YYYY-MM-DD HH:mm")
+                    createdBy: 'Adm',
+                    note: 'To działa...?!',
+                    createdDate: moment().format("YYYY-MM-DD HH:mm")
                 });
             });
         };
@@ -24,7 +24,6 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
                     angular.copy(response.data, self.notes );
             });
         };
-
 
         var self = {
             send: send,

@@ -37,6 +37,7 @@ class ToDoListController extends Controller
         return new JsonResponse([
             'status' => 'ok',
             'createdBy' => 'ok',
+            'createdDate' => 'ok',
             'note' => 'ok',
             'id' => 1//$response->getId()
         ]);
