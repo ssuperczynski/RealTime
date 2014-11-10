@@ -1,0 +1,3 @@
+realtime_notes_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RealtimeNotesBundle:ToDoList:index }

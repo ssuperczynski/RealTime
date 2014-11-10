@@ -1,0 +1,4 @@
+realtime_notes:
+    resource: "@RealtimeNotesBundle/Resources/config/routing.yml"
+    prefix:   /realtime
+
