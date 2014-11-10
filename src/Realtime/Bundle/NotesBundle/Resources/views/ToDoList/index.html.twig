@@ -5,44 +5,44 @@
 {% block body %}
 
     <div class="row" ng-controller="realtimeController" ng-init="get()">
-        <div class="col-md-4">
-            &nbsp;
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div class="col-md-4">
+                <label>
+                    <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
+                </label>
+                <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
+                <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
+                <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
         </div>
-        <div class="col-md-4">
-            <label>
-                <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
-            </label>
-            <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
-            <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
-            <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
-        </div>
-        <div class="col-md-4">
-            &nbsp;
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            &nbsp;
-        </div>
-        <div class="col-md-4">
-            <ul>
-                <li ng-repeat="note in notes">
-                    <div class="row">
-                        <div class="col-md-3" ng-model="createdBy">
-                            [[note.createdBy]]
+        <div class="row">
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li ng-repeat="note in notes">
+                        <div class="row">
+                            <div class="col-md-3" ng-model="createdBy">
+                                [[note.createdBy]]
+                            </div>
+                            <div class="col-md-3 pull-right">
+                                <span class="pull-right" ng-model="datatime">[[note.datetime]]</span>
+                            </div>
                         </div>
-                        <div class="col-md-3 pull-right">
-                            <span class="pull-right" ng-model="datatime">[[note.datetime]]</span>
+                        <div class="row-md-10" ng-model="note">
+                            [[note.note]]
                         </div>
-                    </div>
-                    <div class="row-md-10" ng-model="note">
-                        [[note.note]]
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
         </div>
-        <div class="col-md-4">
-            &nbsp;
-        </div>
-    </div>
 {% endblock %}
