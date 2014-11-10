@@ -13,7 +13,7 @@
                 <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
             </label>
             <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
-            <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button> 
+            <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
             <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
         </div>
         <div class="col-md-4">
@@ -25,24 +25,21 @@
             &nbsp;
         </div>
         <div class="col-md-4">
-            <div class="list-group">
-                <a href="#" class="list-group-item disabled">
-                    Cras justo odio
-                </a>
-                <a href="#" class="list-group-item" ng-repeat="note in notes">
+            <ul>
+                <li ng-repeat="note in notes">
                     <div class="row">
-                        <div class="col-md-3" mg-model="createdBy">
+                        <div class="col-md-3" ng-model="createdBy">
                             [[note.createdBy]]
                         </div>
                         <div class="col-md-3 pull-right">
-                            <span class="pull-right" mg-model="datatime">[[note.datetime]]</span>
+                            <span class="pull-right" ng-model="datatime">[[note.datetime]]</span>
                         </div>
                     </div>
-                    <div class="row-md-10" mg-model="note">
+                    <div class="row-md-10" ng-model="note">
                         [[note.note]]
                     </div>
-                </a>
-            </div>
+                </li>
+            </ul>
         </div>
         <div class="col-md-4">
             &nbsp;

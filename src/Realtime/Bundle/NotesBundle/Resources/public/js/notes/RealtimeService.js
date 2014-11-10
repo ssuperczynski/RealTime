@@ -10,9 +10,9 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
 //            });
 //    };
 
-        var getCollection = function () {
-            return self.notes;
-        };
+//        var getCollection = function () {
+//            return self.notes;
+//        };
 
         var send = function (data) {
             RealtimeFactory.set({
@@ -30,14 +30,14 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
         };
         
         var get = function () {
-            RealtimeFactory.get().then(
+            return RealtimeFactory.get().then(
                 function (response) {
                 angular.copy(response, self.notes );
             });
-        };        
+        };
+
 
         var self = {
-            getCollection: getCollection,
             send: send,
             get: get,
             notes: []

@@ -8,14 +8,12 @@ app.factory('RealtimeFactory',['$http', function ($http) {
     var service = {};
 
     service.set = function (data) {
-        alert(baseUrl);
         return $http.post(baseUrl,data);
-    }
+    };
     
     service.get = function () {
-        alert(baseUrl);
         return $http.get(baseUrl,[]);
-    }
+    };
 
     return service;
 
