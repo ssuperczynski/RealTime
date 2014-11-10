@@ -7,7 +7,7 @@ app.controller('realtimeController', ['$scope', 'RealtimeService', function ($sc
         $scope.send = function (content) {
             RealtimeService.send(content);
         };
-       
+
         $scope.get = function () {
             RealtimeService.get();
             $scope.notes = RealtimeService.getCollection();
