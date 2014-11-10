@@ -13,6 +13,7 @@ app.controller('realtimeController', ['$scope', 'RealtimeService', 'Pusher', 'gr
         });
         $scope.send = function (content) {
             RealtimeService.send(content);
+            $scope.content = '';
         };
 
         $scope.get = function () {
