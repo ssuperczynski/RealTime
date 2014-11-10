@@ -3,20 +3,22 @@
 {% block title %}RealtimeNotesBundle:ToDoList:index{% endblock %}
 
 {% block body %}
-<div class="row">
-    <div class="col-md-4">
-        &nbsp;
+
+    <div class="row" ng-controller="realtimeController">
+        <div class="col-md-4">
+            &nbsp;
+        </div>
+        <div class="col-md-4">
+            <label>
+                <input class="form-control input-lg" type="text" ng-model='submit' placeholder="Type data here...">
+            </label>
+            <button class="btn-lg btn-danger btn" ng-click="send()" ng-disabled="!submit">Send</button> 
+            <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
+        </div>
+        <div class="col-md-4">
+            &nbsp;
+        </div>
     </div>
-    <div class="col-md-4">
-        <label>
-            <input class="form-control input-lg" type="text" placeholder=".input-lg">
-        </label>
-        <button class="btn-lg btn-danger btn" ng-model="send">Send</button>
-    </div>
-    <div class="col-md-4">
-        &nbsp;
-    </div>
-</div>
     <div class="row">
         <div class="col-md-4">
             &nbsp;

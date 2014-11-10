@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        
+
         {% block stylesheets %}
             {% stylesheets '@bootstrap_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet"/>
@@ -16,13 +16,18 @@
         {% block javascripts %}
             {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
+
             {% endjavascripts %}
         {% endblock %}
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body ng-app="realtime">
-        {% block body %}{% endblock %}
-
-    </body>
+    {% block body %}{% endblock %}
+    <script>
+        angular.module('configuration', [])
+                .constant('API_END_POINT', '{{ path('realtime_notes_homepage') }}')
+                .constant('COMMON_API_END_POINT', '{{ app.request.getSchemeAndHttpHost() ~ path('realtime_notes_homepage') }}');
+    </script>
+</body>
 </html>
