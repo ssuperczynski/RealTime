@@ -11,7 +11,3 @@ realtime_notes_post: #Angular REST
     path: /notes
     defaults: { _controller: RealtimeNotesBundle:ToDoList:save }
     methods: [POST]
-    
-realtime_notes_test:
-    path: /notes/test
-    defaults: { _controller: RealtimeNotesBundle:ToDoList:test }

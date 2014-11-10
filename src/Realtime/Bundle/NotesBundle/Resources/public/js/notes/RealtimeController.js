@@ -6,10 +6,10 @@ app.controller('realtimeController', ['$scope', 'RealtimeService', 'Pusher', 'gr
             $scope.notes.unshift({
                 id: 1,
                 createdBy: 'Adm',
-                note: 'To działa...?!',
+                note: item,
                 createdDate: moment().format("YYYY-MM-DD HH:mm")
             });
-            growl.success("Dodaną nową notatkę:" + item);
+            growl.success("Dodaną nową notatkę: " + item);
         });
         $scope.send = function (content) {
             RealtimeService.send(content);

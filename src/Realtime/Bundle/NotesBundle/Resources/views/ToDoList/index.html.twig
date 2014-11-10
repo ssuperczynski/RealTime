@@ -9,12 +9,13 @@
             &nbsp;
         </div>
         <div class="col-md-4">
-            <label>
-                <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
-            </label>
-            <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
-            <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
-            <button class="btn-lg btn-danger btn" ><a href={{path('realtime_notes_test')}}>Get</a></button>
+            <form>
+                <label>
+                    <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
+                </label>
+                <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button>
+                <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button>
+            </form>
         </div>
         <div class="col-md-4">
             <div growl></div>
@@ -29,7 +30,7 @@
             <a href="#" class="list-group-item" ng-repeat="note in notes track by $index" ng-class="{archived:archived}">
                 <div class="row">
                     <div class="col-md-3" ng-model="createdBy">
-                        [[note.createdBy]]
+                        [[ $index ]] - [[note.createdBy]]
                     </div>
                     <div class="col-md-5 pull-right">
                         <span class="pull-right" ng-model="datatime">[[note.createdDate]]</span>

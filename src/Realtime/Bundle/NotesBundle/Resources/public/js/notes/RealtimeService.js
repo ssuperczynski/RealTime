@@ -8,13 +8,6 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
                 createdBy: 'admin',
                 note: data,
                 datetime: moment().format("YYYY-MM-DD HH:mm")
-            }).then(function (response) {
-                self.notes.unshift({
-                    id: response.id,
-                    createdBy: 'Adm',
-                    note: 'To działa...?!',
-                    createdDate: moment().format("YYYY-MM-DD HH:mm")
-                });
             });
         };
         

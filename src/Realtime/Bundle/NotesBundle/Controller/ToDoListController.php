@@ -38,12 +38,9 @@ class ToDoListController extends Controller
 
     public function saveAction()
     {
-//        $data = $this->get('request')->request->get('note');
-//        var_dump($data);
-//        $note = $this->get(self::NOTE_SERVICE);
-        //$response = $note->saveApi();
+        $post = json_decode($this->get('request')->getContent());
         $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
-        $pusher->trigger( 'realTimeChannel1', 'saveEvent', '' );
+        $pusher->trigger( 'realTimeChannel1', 'saveEvent', $post->note );
         return new JsonResponse([
             'status' => 'ok',
             'createdBy' => 'ok',
@@ -51,14 +48,6 @@ class ToDoListController extends Controller
             'note' => 'ok',
             'id' => 1//$response->getId()
         ]);
-    }
-    
-    public function testAction(){
-//        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
-//        $pusher->trigger( 'realTimeChannel1', 'saveEvent', 'dupa mariana' );
-//        $response = $pusher->get( '/channels' );
-//        var_dump($response);
-//        exit;
     }
 
 }

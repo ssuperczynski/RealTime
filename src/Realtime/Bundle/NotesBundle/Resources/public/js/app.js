@@ -11,3 +11,13 @@ app.config(['PusherServiceProvider', function(PusherServiceProvider) {
             .setOptions({});
     }
 ]);
+
+app.config(['growlProvider', function(growlProvider) {
+    growlProvider.globalDisableCountDown(true);
+    growlProvider.globalTimeToLive({
+        success: 2000,
+        error: 3000,
+        warning: 3000,
+        info: 3000
+    });
+}]);
