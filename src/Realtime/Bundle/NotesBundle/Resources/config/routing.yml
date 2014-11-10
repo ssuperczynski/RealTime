@@ -1,13 +1,13 @@
-realtime_notes_homepage: #Sym
+realtime_notes_homepage: #Symfony
     path:     /index
     defaults: { _controller: RealtimeNotesBundle:ToDoList:index }
 
-realtime_notes_get:
+realtime_notes_get: #Angular REST
     path: /notes
-    defaults: { _controller: RealtimeNotesBundle:ToDoList:listDetails }
+    defaults: { _controller: RealtimeNotesBundle:ToDoList:get }
     methods: [GET]
 
-realtime_notes_post:
+realtime_notes_post: #Angular REST
     path: /notes
-    defaults: { _controller: RealtimeNotesBundle:ToDoList:saveWizard }
+    defaults: { _controller: RealtimeNotesBundle:ToDoList:save }
     methods: [POST]

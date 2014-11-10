@@ -1,4 +1,5 @@
 services:
-#    realtime_notes.example:
-#        class: Realtime\Bundle\NotesBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+  realtime.note_service:
+      class: Realtime\Bundle\NotesBundle\Service\NotesService
+      arguments: ["@security.context", "@doctrine.orm.entity_manager"]
+
