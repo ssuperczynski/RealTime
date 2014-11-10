@@ -19,20 +19,27 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
                 createdBy: 'admin',
                 note: data,
                 datetime: moment().format("YYYY-MM-DD HH:mm")
-            }).$promise.then(function (response) {
+            }).then(function (response) {
                 self.notes.unshift({
                     id: response.id,
                     createdBy: response.createdBy,
                     note: response.note,
                     datetime: moment().format("YYYY-MM-DD HH:mm")
                 });
-
             });
         };
+        
+        var get = function () {
+            RealtimeFactory.get().then(
+                function (response) {
+                angular.copy(response, self.notes );
+            });
+        };        
 
         var self = {
             getCollection: getCollection,
             send: send,
+            get: get,
             notes: []
         };
 

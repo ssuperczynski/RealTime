@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="row" ng-controller="realtimeController">
+    <div class="row" ng-controller="realtimeController" ng-init="get()">
         <div class="col-md-4">
             &nbsp;
         </div>
@@ -13,6 +13,7 @@
                 <input class="form-control input-lg" type="text" ng-model='content' placeholder="Type data here...">
             </label>
             <button class="btn-lg btn-danger btn" ng-click="send(content)" ng-disabled="!content">Send</button> 
+            <button class="btn-lg btn-danger btn" ng-click="get()" >Get</button> 
             <span ng-bind="submit"></span>  {#[[submit]] - to jest wolnijsze!!!#}
         </div>
         <div class="col-md-4">
@@ -28,18 +29,17 @@
                 <a href="#" class="list-group-item disabled">
                     Cras justo odio
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item" ng-repeat="note in notes">
                     <div class="row">
                         <div class="col-md-3" mg-model="createdBy">
-                            Author
+                            [[note.createdBy]]
                         </div>
                         <div class="col-md-3 pull-right">
-                            <span class="pull-right" mg-model="datatime">Time</span>
+                            <span class="pull-right" mg-model="datatime">[[note.datetime]]</span>
                         </div>
                     </div>
                     <div class="row-md-10" mg-model="note">
-                        Note dasdas dsadas dsa das dasdsa dsadsad sad sadasdas 
-                        dasdas dsa  asdasdsadsa dsadsad sadasdsa dsadasd sd dd
+                        [[note.note]]
                     </div>
                 </a>
             </div>
