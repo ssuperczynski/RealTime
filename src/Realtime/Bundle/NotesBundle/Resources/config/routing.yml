@@ -1,3 +1,13 @@
-realtime_notes_homepage:
+realtime_notes_homepage: #Sym
     path:     /index
     defaults: { _controller: RealtimeNotesBundle:ToDoList:index }
+
+realtime_notes_get:
+    path: /notes
+    defaults: { _controller: RealtimeNotesBundle:ToDoList:listDetails }
+    methods: [GET]
+
+realtime_notes_post:
+    path: /notes
+    defaults: { _controller: RealtimeNotesBundle:ToDoList:saveWizard }
+    methods: [POST]

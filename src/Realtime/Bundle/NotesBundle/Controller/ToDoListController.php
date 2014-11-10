@@ -11,7 +11,7 @@ class ToDoListController extends Controller
 
     public function indexAction()
     {
-        return $this->render('RealtimeNotesBundle:ToDoList:index.html.twig', array('name' => 'Test'));
+        return $this->render('RealtimeNotesBundle:ToDoList:index.html.twig');
     }
 
 }
