@@ -1,16 +1,21 @@
 'use strict';
+var app = angular.module('realtime');
 
-app.service('TimelineService', ['TimelineFactory', function (TimelineFactory) {
+app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
 
-    var getTimeline = function (recruitmentId, applicationId) {
-        return TimelineFactory.get({ recruitmentId: recruitmentId, applicationId: applicationId }).$promise
-            .then(function (response) {
-                angular.copy(response, self.notes);
-            });
-    };
+//    var getTimeline = function (recruitmentId, applicationId) {
+//        return RealtimeFactory.get({ recruitmentId: recruitmentId, applicationId: applicationId }).$promise
+//            .then(function (response) {
+//                angular.copy(response, self.notes);
+//            });
+//    };
+
+    var getTimeline = function () {
+        alert('dsd');
+    }
 
     var addToTimeline = function (data) {
-        TimelineFactory.set({
+            RealtimeFactory.set({
             recruitmentId: data.recruitmentId,
             messageType: data.messageType,
             newNote: data.newNote,
@@ -39,7 +44,6 @@ app.service('TimelineService', ['TimelineFactory', function (TimelineFactory) {
         getTimeline: getTimeline,
         addToTimeline: addToTimeline,
         notes: []
-
     };
 
     return self;
