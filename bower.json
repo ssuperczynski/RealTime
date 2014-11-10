@@ -6,12 +6,13 @@
     "Andzej <mkomoch@wp.pl>"
   ],
   "license": "MIT",
-    "dependencies": {
-        "angular": "1.3.*",
-        "bootstrap": "3.2.0",
-        "angular-route": "1.3.*",
-        "angular-bootstrap": "0.11.0",
-        "jquery": "~2.1.1",
-        "angular-growl-v2": "~0.7.0"
-    }
+  "dependencies": {
+    "angular": "1.3.*",
+    "bootstrap": "3.2.0",
+    "angular-route": "1.3.*",
+    "angular-bootstrap": "0.11.0",
+    "jquery": "~2.1.1",
+    "angular-growl-v2": "~0.7.0",
+    "moment": "~2.8.3"
+  }
 }

@@ -14,7 +14,7 @@
         {% endblock %}
 
         {% block javascripts %}
-            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' %}
+            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' '@moment_js' %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
 
             {% endjavascripts %}
@@ -27,7 +27,7 @@
     <script>
         angular.module('configuration', [])
                 .constant('API_END_POINT', '{{ path('realtime_notes_homepage') }}')
-                .constant('COMMON_API_END_POINT', '{{ app.request.getSchemeAndHttpHost() ~ path('realtime_notes_homepage') }}');
+                .constant('COMMON_API_END_POINT', '{{ app.request.getSchemeAndHttpHost() }}');
     </script>
 </body>
 </html>

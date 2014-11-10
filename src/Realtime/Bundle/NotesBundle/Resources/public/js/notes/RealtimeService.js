@@ -10,45 +10,35 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
 //            });
 //    };
 
-    var getTimeline = function () {
-        alert('dsd');
-    }
+        var getCollection = function () {
+            return self.notes;
+        };
 
-    var addToTimeline = function (data) {
+        var send = function (data) {
             RealtimeFactory.set({
-            recruitmentId: data.recruitmentId,
-            messageType: data.messageType,
-            newNote: data.newNote,
-            file: data.file ? data.file.id : null,
-            applicationId: data.applicationId
-        }).$promise.then(function (response) {
-            self.notes.unshift({
-                id: response.id,
-                createdBy: response.createdBy,
-                event_date: moment().format("YYYY-MM-DD HH:mm"),
-                recruitment: data.recruitmentId,
-                type: data.messageType,
-                value: data.newNote,
-                file_id: data.file ? data.file.path : null,
-                file_name: data.file ? data.file.name : '',
-                candidate: response.candidate,
-                candidate_id: response.candidate_id,
-                application: response.application,
-                label: response.label
+                createdBy: 'admin',
+                note: data,
+                datetime: moment().format("YYYY-MM-DD HH:mm")
+            }).$promise.then(function (response) {
+                self.notes.unshift({
+                    id: response.id,
+                    createdBy: response.createdBy,
+                    note: response.note,
+                    datetime: moment().format("YYYY-MM-DD HH:mm")
+                });
+
             });
+        };
 
-        });
-    };
+        var self = {
+            getCollection: getCollection,
+            send: send,
+            notes: []
+        };
 
-    var self = {
-        getTimeline: getTimeline,
-        addToTimeline: addToTimeline,
-        notes: []
-    };
+        return self;
 
-    return self;
-
-}]);
+    }]);
 
 
 //servis manipulowanie kolekcjami
