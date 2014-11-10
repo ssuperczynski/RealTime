@@ -49,7 +49,10 @@ class ToDoListController extends Controller
     }
     
     public function testAction(){
-        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, false, 'https://api.pusherapp.com', 443);
+        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, true);
+        $pusher->trigger( 'realTimeChannel1', 'saveEvent', 'dupa mariana' );
+        $response = $pusher->get( '/channels' );
+        var_dump($response);
         exit;
     }
 
