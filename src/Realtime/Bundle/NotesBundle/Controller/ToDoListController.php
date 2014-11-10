@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncode;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Pusher;
 
 class ToDoListController extends Controller
 {
@@ -36,9 +37,6 @@ class ToDoListController extends Controller
 
     public function saveAction()
     {
-
-        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, false, 'https://api.pusherapp.com', 443);
-        
         $note = $this->get(self::NOTE_SERVICE);
         //$response = $note->saveApi();
         return new JsonResponse([
@@ -48,6 +46,11 @@ class ToDoListController extends Controller
             'note' => 'ok',
             'id' => 1//$response->getId()
         ]);
+    }
+    
+    public function testAction(){
+        $pusher = new Pusher(self::APP_KEY, self::APP_SECRET, self::APP_ID, false, 'https://api.pusherapp.com', 443);
+        exit;
     }
 
 }
