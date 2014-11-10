@@ -3,17 +3,6 @@ var app = angular.module('realtime');
 
 app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
 
-//    var getTimeline = function (recruitmentId, applicationId) {
-//        return RealtimeFactory.get({ recruitmentId: recruitmentId, applicationId: applicationId }).$promise
-//            .then(function (response) {
-//                angular.copy(response, self.notes);
-//            });
-//    };
-
-//        var getCollection = function () {
-//            return self.notes;
-//        };
-
         var send = function (data) {
             RealtimeFactory.set({
                 createdBy: 'admin',
@@ -32,7 +21,7 @@ app.service('RealtimeService', ['RealtimeFactory', function (RealtimeFactory) {
         var get = function () {
             return RealtimeFactory.get().then(
                 function (response) {
-                angular.copy(response, self.notes );
+                    angular.copy(response.data, self.notes );
             });
         };
 

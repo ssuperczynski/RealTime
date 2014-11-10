@@ -3,8 +3,8 @@
 {% block title %}RealtimeNotesBundle:ToDoList:index{% endblock %}
 
 {% block body %}
-
-    <div class="row" ng-controller="realtimeController" ng-init="get()">
+<div ng-controller="realtimeController" ng-init="get()">
+    <div class="row" >
         <div class="col-md-4">
             &nbsp;
         </div>
@@ -20,29 +20,29 @@
             &nbsp;
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-4">
             &nbsp;
         </div>
         <div class="col-md-4">
-            <ul>
-                <li ng-repeat="note in notes">
-                    <div class="row">
-                        <div class="col-md-3" ng-model="createdBy">
-                            [[note.createdBy]]
-                        </div>
-                        <div class="col-md-3 pull-right">
-                            <span class="pull-right" ng-model="datatime">[[note.datetime]]</span>
-                        </div>
+            <a href="#" class="list-group-item" ng-repeat="note in notes">
+                <div class="row">
+                    <div class="col-md-3" ng-model="createdBy">
+                        [[note.createdBy]]
                     </div>
-                    <div class="row-md-10" ng-model="note">
-                        [[note.note]]
+                    <div class="col-md-3 pull-right">
+                        <span class="pull-right" ng-model="datatime">[[note.datetime]]</span>
                     </div>
-                </li>
-            </ul>
+                </div>
+                <div class="row-md-10" ng-model="note">
+                    [[note.note]]
+                </div>
+           </a>
         </div>
         <div class="col-md-4">
             &nbsp;
         </div>
     </div>
+</div>
 {% endblock %}
