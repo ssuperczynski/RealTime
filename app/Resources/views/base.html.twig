@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
+        
         {% block stylesheets %}
             {% stylesheets '@bootstrap_css' %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet"/>
@@ -11,14 +12,17 @@
             <link href='//fonts.googleapis.com/css?family=Comfortaa:400,700%27' rel='stylesheet' type='text/css'>
             {% endstylesheets %}
         {% endblock %}
+
+        {% block javascripts %}
+            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' '@realtime_app_js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body ng-app="realtime">
         {% block body %}{% endblock %}
-        {% block javascripts %}
-            {% javascripts '@jquery_js' '@angular_js' '@angular_bootstrap_js' %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-            {% endjavascripts %}
-        {% endblock %}
+
     </body>
 </html>
